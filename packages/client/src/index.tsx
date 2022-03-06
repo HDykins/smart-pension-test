@@ -4,8 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { ColorModeScript } from '@chakra-ui/react'
 import { App } from './App'
-import { reportWebVitals } from './reportWebVitals'
-import * as serviceWorker from './serviceWorker'
+import { reportWebVitals, serviceWorker } from './util'
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',

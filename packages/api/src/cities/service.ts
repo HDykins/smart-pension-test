@@ -47,12 +47,28 @@ const get = (id: string | number): City | undefined => {
   return cities.find(city => id.toString() === city.id.toString())
 }
 
+export const findCityIndexById = (cities: City[], cityId: number | string): number | undefined => {
+  let cityIndex: number | undefined
+  cities.forEach((city, i) => {
+    if (cityId.toString() === city.id.toString()) {
+      cityIndex = i
+    }
+  })
+  return cityIndex
+}
+
 export const update = (id: string | number, { id: _id, ...updatedFields }: Partial<City>): City | undefined => {
   const city = get(id)
   if (!city) return
 
   const updatedCity = Object.assign(city, updatedFields)
-  return updatedCity
+  const cityIndex = findCityIndexById(cities, id)
+  if (cityIndex) {
+    cities[cityIndex] = updatedCity
+    return updatedCity
+  } else {
+    return
+  }
 }
 
 export const citiesService = {
