@@ -1,42 +1,18 @@
 # Traveller - Smart front end take-home technical test
 
-## Goals
+Hello there! This is my submission of the smart pension take home FE test. I enjoyed it! The stack makes it quite easy to work on (love the hotloading), and I appreciate the choice between GraphQL and REST
 
-1.  Allow the user to search for cities using the provided input.
-2.  Display the cities found on the home page.
-3.  Allow the user to set the visited/wishlist state of a city to `true`/`false` via API requests.
-4.  Cities that have visited/wishlist set to `true` should then appear on their respective pages.
+###About the test
 
-## Install and run
+- I enjoyed using chakra, haven't used before but it's pretty similar to material-ui.
+- I had to change my node version to exactly 14.16.0, despite the package.json saying ^14.16.0 and me being on 14.2.0
+- I changed the API package only very slightly, I thought it may be out of scope for this test to implement a DB, so any changes to the data is stored in memory while the server is up. I thought about using session storage to make changes persistent but I thought that would be a bad use of the session.
 
-```
-npx lerna bootstrap
-yarn start:all
-```
+###Things I would improve/refactor about my code in hindsight
 
-## Info
+- I didn't implement tests for all components, would add more and do some mocking of requests
+- I would simplify the state of components by implementing a store for the cities data, probably using React's context, there is currently too much passing down props
+- I would make it prettier
 
-### API
-
-We have provided both a REST and a GraphQL API, you are free to use whichever you are most comfortable with in your solution. You can find documention for these at the following URLS:
-
-- REST - [http://localhost:4000/rest](http://localhost:4000/rest)
-- GraphQL - [http://localhost:4000/graphql](http://localhost:4000/graphql)
-
-### Client
-
-After running the client you will find a home page with an input field that is currently non-functional as well an empty wish list and visited pages.
-
-We have provided a few packages that will help you in your solution:
-
-- If you choose to use GraphQL we have added [Apollo Client](https://www.apollographql.com/docs/react).
-- For testing, we have provided [Jest](https://jestjs.io)/[React Testing Libary](https://testing-library.com/docs/react-testing-library/intro).
-- For styling, you will find the component library [Chakra UI](https://chakra-ui.com).
-
-## What we're looking for
-
-- Use of abstractions where they make sense (DRY).
-- Sensible choices regarding performance.
-- Functionality tested.
-- An accessible solution.
-- We use TypeScript and would be happy to see a well typed solution, however if you're not comfortable with this feel free to use JavaScript.
+Cheers,
+Harry
